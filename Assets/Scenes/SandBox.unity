@@ -4166,6 +4166,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 496924, guid: 653c97bd88b4b084d87714542c43ee5a, type: 3}
   m_PrefabInstance: {fileID: 1818014747}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1822404051 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4880255559201894540, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
+  m_PrefabInstance: {fileID: 2703711322980449678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1822404055
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822404051}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: d288a0e4a2d923b46898986e979da643, type: 3}
+  m_Controller: {fileID: 9100000, guid: 5ce1880611c684049bf499b1d9de8e5c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1863211854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4902,6 +4927,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 134108118, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
+      propertyPath: m_Speed
+      value: 5.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 134108118, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
+      propertyPath: m_Acceleration
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 134108118, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 700
+      objectReference: {fileID: 0}
     - target: {fileID: 4880255559201894540, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4916,7 +4953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8181596201080677276, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 53
+      value: 52.19
       objectReference: {fileID: 0}
     - target: {fileID: 8181596201080677276, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
       propertyPath: m_LocalPosition.z
