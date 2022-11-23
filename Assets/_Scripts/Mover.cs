@@ -9,6 +9,8 @@ public class Mover : MonoBehaviour
     [SerializeField] Animator animator;
     NavMeshAgent agent;
 
+    PlayerController playerController;
+
     private void Start() 
     {
         agent = GetComponent<NavMeshAgent>();
@@ -19,22 +21,18 @@ public class Mover : MonoBehaviour
     {
         if(Input.GetMouseButton(0))
         {
-           MoveToCursor();
+           //playerController.MoveToCursor();
+           GetComponent<PlayerController>().MoveToCursor();
         }
         UpdateAnimator();
     }
 
-        private void MoveToCursor()
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit; 
-            bool hasHit = Physics.Raycast(ray, out hit);
-            if(hasHit)
-            {
-                agent.SetDestination(hit.point);
-            }
-        }
-        private void UpdateAnimator()
+    public void MoveTo(Vector3 destination)
+    {
+        GetComponent<NavMeshAgent>().destination = destination;
+    }
+
+    private void UpdateAnimator()
         {
             // Get the speed form the navmesh agent
             Vector3 velocity = agent.velocity; 
