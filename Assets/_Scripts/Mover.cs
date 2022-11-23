@@ -15,21 +15,17 @@ public class Mover : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        playerController = GetComponent<PlayerController>();
     }
 
     void Update()
     {
-        if(Input.GetMouseButton(0))
-        {
-           //playerController.MoveToCursor();
-           GetComponent<PlayerController>().MoveToCursor();
-        }
         UpdateAnimator();
     }
 
     public void MoveTo(Vector3 destination)
     {
-        GetComponent<NavMeshAgent>().destination = destination;
+        agent.destination = destination;
     }
 
     private void UpdateAnimator()
