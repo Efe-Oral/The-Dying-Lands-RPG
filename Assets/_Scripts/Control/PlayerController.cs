@@ -20,8 +20,15 @@ namespace RPG.Control
 
         private void Update()
         {
-            if(InteractWithCombat()){return;}
-            if(InteractWithMovement()){return;}
+            if(InteractWithCombat())
+            {
+                return;
+            }
+            if(InteractWithMovement())
+            {
+                return;
+            }
+            // This area is not interactable
             print("Nothing here");
         }
 
