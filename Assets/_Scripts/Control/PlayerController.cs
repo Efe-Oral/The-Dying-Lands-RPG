@@ -28,7 +28,7 @@ namespace RPG.Control
             {
                 return;
             }
-            // This area is not interactable
+            // We should understand that, this area is not interactable 
             print("Nothing here");
         }
 
