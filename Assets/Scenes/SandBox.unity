@@ -3704,28 +3704,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 496924, guid: 653c97bd88b4b084d87714542c43ee5a, type: 3}
   m_PrefabInstance: {fileID: 1500061749}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1549252418 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4880255559201894540, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
-  m_PrefabInstance: {fileID: 2703711322980449678}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1549252419 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1822404055, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
-  m_PrefabInstance: {fileID: 2703711322980449678}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1549252423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549252418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c77f84badefc2244bdc6212219807ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1576775123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4933,10 +4911,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2058667272}
-    - target: {fileID: 134108117, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1549252419}
     - target: {fileID: 4880255559201894540, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
       propertyPath: m_Name
       value: Player

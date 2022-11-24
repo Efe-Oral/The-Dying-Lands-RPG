@@ -5,6 +5,11 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
+    Mover mover;
+    private void Start() 
+    {
+        mover = GetComponent<Mover>();
+    }
 
     private void Update() 
     {
@@ -13,6 +18,7 @@ public class PlayerController : MonoBehaviour
             MoveToCursor();
         }
     }
+    
     public void MoveToCursor()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -20,7 +26,7 @@ public class PlayerController : MonoBehaviour
         bool hasHit = Physics.Raycast(ray, out hit);
         if (hasHit)
         {
-            GetComponent<Mover>().MoveTo(hit.point);
+            mover.MoveTo(hit.point);
         }
     }
 }
