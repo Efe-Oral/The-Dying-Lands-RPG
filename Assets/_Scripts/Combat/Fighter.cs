@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fighter : MonoBehaviour
+namespace RPG.Combat
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Fighter : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void Attack()
+        {
+            Debug.Log("Attacked the peasent!");
+        }
     }
 }
+
