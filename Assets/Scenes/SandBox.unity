@@ -4911,10 +4911,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2058667272}
-    - target: {fileID: 3849886973705499369, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
-      propertyPath: weaponRange
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4880255559201894540, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4925,7 +4921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8181596201080677276, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8
+      value: -1.18
       objectReference: {fileID: 0}
     - target: {fileID: 8181596201080677276, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4933,7 +4929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8181596201080677276, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: -3.51
       objectReference: {fileID: 0}
     - target: {fileID: 8181596201080677276, guid: 02efe60d637747d49a6ad2032c203e92, type: 3}
       propertyPath: m_LocalRotation.w

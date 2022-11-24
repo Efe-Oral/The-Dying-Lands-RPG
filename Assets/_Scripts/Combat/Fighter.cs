@@ -25,6 +25,7 @@ namespace RPG.Combat
                 if(distance <= weaponRange)
                 {
                     mover.Stop();
+                    target = null;
                 }
                 else
                 {
@@ -37,11 +38,14 @@ namespace RPG.Combat
             target = CombatTarget.transform;  
         }
 
-        //void OnDrawGizmos()
-        //{
-            //Gizmos.color = Color.yellow;
-            //Gizmos.DrawSphere(target.transform.position, stoppingDistance);
-        //}
+        private void OnDrawGizmos()
+        {
+            if(target != null)
+            {
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawWireSphere(target.transform.position, weaponRange);
+            }
+        }
     }
 }
 
