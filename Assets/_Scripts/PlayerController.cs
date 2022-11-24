@@ -3,30 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerController : MonoBehaviour
+namespace RPG.Control
 {
-    Mover mover;
-    private void Start() 
+    public class PlayerController : MonoBehaviour
     {
-        mover = GetComponent<Mover>();
-    }
+        Mover mover;
 
-    private void Update() 
-    {
-        if (Input.GetMouseButton(0))
+        private void Start()
         {
-            MoveToCursor();
+            mover = GetComponent<Mover>();
         }
-    }
-    
-    public void MoveToCursor()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        bool hasHit = Physics.Raycast(ray, out hit);
-        if (hasHit)
+
+        private void Update()
         {
-            mover.MoveTo(hit.point);
+            if (Input.GetMouseButton(0))
+            {
+                MoveToCursor();
+            }
+        }
+
+        public void MoveToCursor()
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            bool hasHit = Physics.Raycast(ray, out hit);
+            if (hasHit)
+            {
+                mover.MoveTo(hit.point);
+            }
         }
     }
 }
