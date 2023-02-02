@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using RPG.Combat;
+using Core;
 
 namespace RPG.Movement
 {
@@ -11,7 +12,8 @@ namespace RPG.Movement
         [SerializeField] Transform target;
         [SerializeField] Animator animator;
         NavMeshAgent agent;
-        Fighter fighter;
+        Fighter fighter;     
+        ActionScheduler actionScheduler;   
 
         private void Start()
         {
@@ -27,6 +29,7 @@ namespace RPG.Movement
 
         public void StartMoveAction(Vector3 destination)
         {
+            actionScheduler.StartAction(this);
             fighter.Cancel();
             MoveTo(destination);
         }
@@ -39,6 +42,7 @@ namespace RPG.Movement
 
         public void Stop()
         {
+            actionScheduler.StartAction(this);
             agent.isStopped = true;
         }
 
