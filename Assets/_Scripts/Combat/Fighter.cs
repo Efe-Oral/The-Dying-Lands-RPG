@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using RPG.Movement;
-using Core;
+using RPG.Core;
 
 namespace RPG.Combat
 {
@@ -40,7 +40,8 @@ namespace RPG.Combat
         }
         public void Attack(CombatTarget CombatTarget)
         {
-            actionScheduler.StartAction(this);
+            GetComponent<ActionScheduler>().StartAction(this);
+            //actionScheduler.StartAction(this);
             target = CombatTarget.transform;  
         }
 

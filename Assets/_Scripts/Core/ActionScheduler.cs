@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core
+namespace RPG.Core
 {
     public class ActionScheduler : MonoBehaviour
     {
@@ -10,11 +10,13 @@ namespace Core
 
         public void StartAction(MonoBehaviour action)
         {
-            if(action != null)
+            if(currentAction == action) return;
+            if(currentAction != null)
             {
-                currentAction = action;
-                Debug.Log("Cancelling" + currentAction);
+                Debug.Log(" Cancelling" + " " + currentAction);
+
             }
+            currentAction = action;
         }
     }
 }
