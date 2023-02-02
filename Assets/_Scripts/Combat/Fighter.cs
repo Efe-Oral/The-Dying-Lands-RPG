@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RPG.Movement;
 using UnityEngine.AI;
+using RPG.Movement;
 
 namespace RPG.Combat
 {
@@ -45,6 +45,11 @@ namespace RPG.Combat
                 Gizmos.color = Color.yellow;
                 Gizmos.DrawWireSphere(target.transform.position, weaponRange);
             }
+        }
+
+        public void Cancel()
+        {
+            target = null;
         }
     }
 }
