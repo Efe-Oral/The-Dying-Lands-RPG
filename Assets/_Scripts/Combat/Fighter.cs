@@ -19,6 +19,8 @@ namespace RPG.Combat
 
         private void Update() 
         {
+            if(target == null) return;
+
             if(target != null)
             {
                 float distance = Vector3.Distance(target.transform.position, gameObject.transform.position);
