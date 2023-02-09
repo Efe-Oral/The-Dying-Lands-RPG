@@ -11,15 +11,20 @@ namespace RPG.Combat
     {
         [SerializeField] float weaponRange = 5f;
         [SerializeField] float timeBetweenAttacks = 0.5f;
+        [SerializeField] float damage = 10f;
 
         ActionScheduler actionScheduler;
         Transform target;
         Mover mover;
+        Health health;
+
         float timeSinceLastAttack = 0f;
+        
 
         private void Start() 
         {
             mover = GetComponent<Mover>();
+            health = GetComponent<Health>();
         }
 
         private void Update() 
@@ -49,6 +54,7 @@ namespace RPG.Combat
             {
                 GetComponent<Animator>().SetTrigger("attack");
                 timeSinceLastAttack = 0f;
+                target.GetComponent<Health>().TakeDamage(damage); //The component on the enemy
             }
         }
 
