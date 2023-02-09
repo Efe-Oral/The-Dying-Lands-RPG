@@ -7,7 +7,7 @@ using RPG.Core;
 
 namespace RPG.Movement
 {
-    public class Mover : MonoBehaviour
+    public class Mover : MonoBehaviour, IAction
     {
         [SerializeField] Transform target;
         [SerializeField] Animator animator;
@@ -20,6 +20,7 @@ namespace RPG.Movement
             agent = GetComponent<NavMeshAgent>();
             animator = GetComponent<Animator>();
             fighter = GetComponent<Fighter>();
+            actionScheduler = GetComponent<ActionScheduler>();
         }
 
         void Update()
@@ -29,8 +30,7 @@ namespace RPG.Movement
 
         public void StartMoveAction(Vector3 destination)
         {
-            GetComponent<ActionScheduler>().StartAction(this);
-            //actionScheduler.StartAction(this);
+            actionScheduler.StartAction(this);
             fighter.Cancel();
             MoveTo(destination);
         }
@@ -44,6 +44,11 @@ namespace RPG.Movement
         public void Stop()
         {
             agent.isStopped = true;
+        }
+
+        public void Cancel()
+        {
+
         }
 
         private void UpdateAnimator()

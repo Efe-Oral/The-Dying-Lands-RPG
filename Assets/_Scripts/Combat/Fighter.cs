@@ -7,7 +7,7 @@ using RPG.Core;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour
+    public class Fighter : MonoBehaviour, IAction
     {
         Transform target;
         Mover mover;
@@ -41,7 +41,6 @@ namespace RPG.Combat
         public void Attack(CombatTarget CombatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
-            //actionScheduler.StartAction(this);
             target = CombatTarget.transform;  
         }
 

@@ -6,14 +6,15 @@ namespace RPG.Core
 {
     public class ActionScheduler : MonoBehaviour
     {
-        MonoBehaviour currentAction;
+        IAction currentAction; // This type of "IAction" must have all the methods written in it
 
-        public void StartAction(MonoBehaviour action)
+        public void StartAction(IAction action)
         {
             if(currentAction == action) return;
             if(currentAction != null)
             {
                 Debug.Log(" Cancelling" + " " + currentAction);
+                action.Cancel();
 
             }
             currentAction = action;
