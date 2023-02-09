@@ -9,10 +9,13 @@ namespace RPG.Combat
 {
     public class Fighter : MonoBehaviour, IAction
     {
+        [SerializeField] float weaponRange = 5f;
+        [SerializeField] float timeBetweenAttacks = 0.5f;
+
+        ActionScheduler actionScheduler;
         Transform target;
         Mover mover;
-        [SerializeField] float weaponRange = 5f;
-        ActionScheduler actionScheduler;
+        float timeSinceLastAttack = 0f;
 
         private void Start() 
         {
@@ -21,6 +24,8 @@ namespace RPG.Combat
 
         private void Update() 
         {
+            timeSinceLastAttack += Time.deltaTime;
+
             if(target == null) return;
 
             if(target != null)
@@ -29,8 +34,7 @@ namespace RPG.Combat
                 if(distance <= weaponRange)
                 {
                     mover.Cancel();
-                    target = null;
-                    GetComponent<Animator>().SetTrigger("attack");
+                    AttackBehaviour();
                 }
                 else
                 {
@@ -38,6 +42,16 @@ namespace RPG.Combat
                 }
             }
         }
+
+        private void AttackBehaviour()
+        {
+            if(timeSinceLastAttack > timeBetweenAttacks)
+            {
+                GetComponent<Animator>().SetTrigger("attack");
+                timeSinceLastAttack = 0f;
+            }
+        }
+
         public void Attack(CombatTarget CombatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
