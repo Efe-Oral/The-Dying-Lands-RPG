@@ -13,7 +13,6 @@ namespace RPG.Combat
         Mover mover;
         [SerializeField] float weaponRange = 5f;
         ActionScheduler actionScheduler;
-        
 
         private void Start() 
         {
@@ -29,7 +28,7 @@ namespace RPG.Combat
                 float distance = Vector3.Distance(target.transform.position, gameObject.transform.position);
                 if(distance <= weaponRange)
                 {
-                    mover.Stop();
+                    mover.Cancel();
                     target = null;
                 }
                 else
