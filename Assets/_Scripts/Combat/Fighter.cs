@@ -54,7 +54,7 @@ namespace RPG.Combat
             {
                 GetComponent<Animator>().SetTrigger("attack");
                 timeSinceLastAttack = 0f;
-                //This will trigger the Hit() method below line 62
+                //This will trigger the Hit() method below line 63
             }
         }
 
