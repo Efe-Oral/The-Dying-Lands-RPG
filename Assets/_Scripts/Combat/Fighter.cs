@@ -16,7 +16,7 @@ namespace RPG.Combat
         float timeSinceLastAttack = 0f;
 
         ActionScheduler actionScheduler;
-        Transform target;
+        Health target;
         Mover mover;
         Health health;
  
@@ -31,6 +31,9 @@ namespace RPG.Combat
             timeSinceLastAttack += Time.deltaTime;
 
             if(target == null) return;
+
+            if (target.IsDead()) return;
+            
             if(target != null)
             {
                 float distance = Vector3.Distance(target.transform.position, gameObject.transform.position);
@@ -41,7 +44,7 @@ namespace RPG.Combat
                 }
                 else
                 {
-                    mover.MoveTo(target.position);
+                    mover.MoveTo(target.transform.position);
                 }
             }
         }
@@ -60,14 +63,14 @@ namespace RPG.Combat
         void Hit()
         {
             if(target == null) return; //If there are no target, return
-            target.GetComponent<Health>().TakeDamage(weaponDamage); //The component on the enemy
+            target.TakeDamage(weaponDamage); //The component on the thing we hit
         }
 
-        public void Attack(CombatTarget CombatTarget)
+        public void Attack(CombatTarget combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
-            target = CombatTarget.transform;  
-        }
+            target = combatTarget.GetComponent<Health>();  
+        } 
 
         private void OnDrawGizmos()
         {
@@ -80,7 +83,7 @@ namespace RPG.Combat
 
         public void Cancel()
         {
-            GetComponent<Animator>().SetTrigger("stopAttack");
+            GetComponent<Animator>().SetTrigger("stopAttack"); //Cancel attack animation by moving somewhere else while fighting
             target = null;
         }
     }
