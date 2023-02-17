@@ -32,7 +32,7 @@ namespace RPG.Combat
 
             if(target == null) return;
 
-            if (target.IsDead()) return;
+            if (target.IsDead()) return; //If target is dead stop playing the attack animation
             
             if(target != null)
             {
