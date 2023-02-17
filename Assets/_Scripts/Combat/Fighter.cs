@@ -13,14 +13,13 @@ namespace RPG.Combat
         [SerializeField] float timeBetweenAttacks = 0.5f;
         [SerializeField] float weaponDamage = 10f;
 
+        float timeSinceLastAttack = 0f;
+
         ActionScheduler actionScheduler;
         Transform target;
         Mover mover;
         Health health;
-
-        float timeSinceLastAttack = 0f;
-        
-
+ 
         private void Start() 
         {
             mover = GetComponent<Mover>();
@@ -32,7 +31,6 @@ namespace RPG.Combat
             timeSinceLastAttack += Time.deltaTime;
 
             if(target == null) return;
-
             if(target != null)
             {
                 float distance = Vector3.Distance(target.transform.position, gameObject.transform.position);
@@ -82,6 +80,7 @@ namespace RPG.Combat
 
         public void Cancel()
         {
+            GetComponent<Animator>().SetTrigger("stopAttack");
             target = null;
         }
     }
