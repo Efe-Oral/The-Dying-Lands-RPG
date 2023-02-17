@@ -17,8 +17,8 @@ namespace RPG.Combat
 
         ActionScheduler actionScheduler;
         Health target;
-        Mover mover;
         Health health;
+        Mover mover;
  
         private void Start() 
         {
@@ -51,6 +51,7 @@ namespace RPG.Combat
 
         private void AttackBehaviour()
         {
+            transform.LookAt(target.transform.position);
             if(timeSinceLastAttack > timeBetweenAttacks)
             {
                 GetComponent<Animator>().SetTrigger("attack");
