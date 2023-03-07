@@ -53,7 +53,7 @@ namespace RPG.Control
             foreach (RaycastHit hit in hits)
             {
                 CombatTarget target = hit.collider.GetComponent<CombatTarget>();
-                if (target == null) continue;
+                if(!fighter.CanAttack(target)) continue;
                 if(Input.GetMouseButtonDown(0))
                 {
                     fighter.Attack(target);
