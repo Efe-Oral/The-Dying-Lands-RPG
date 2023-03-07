@@ -54,9 +54,10 @@ namespace RPG.Combat
             transform.LookAt(target.transform.position);
             if(timeSinceLastAttack > timeBetweenAttacks)
             {
+                GetComponent<Animator>().ResetTrigger("stopAttack");
                 GetComponent<Animator>().SetTrigger("attack");
                 timeSinceLastAttack = 0f;
-                //This will trigger the Hit() method below line 63
+                //This will trigger the Hit() method below line 65
             }
         }
 
