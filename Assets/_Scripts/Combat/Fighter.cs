@@ -102,9 +102,14 @@ namespace RPG.Combat
 
         public void Cancel()
         {
-            GetComponent<Animator>().ResetTrigger("attack");
-            GetComponent<Animator>().SetTrigger("stopAttack"); //Cancel attack animation by moving somewhere else while fighting
+            StopAttack();//Cancel attack animation by moving somewhere else while fighting
             target = null;
+        }
+
+        private void StopAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("attack");
+            GetComponent<Animator>().SetTrigger("stopAttack");
         }
     }
 }
